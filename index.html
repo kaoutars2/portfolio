@@ -639,6 +639,22 @@
             .project-links {
                 flex-direction: column;
             }
+            
+            /* For 2 certificates on mobile */
+            .certificates-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Adjust grid for 2 certificates on desktop */
+        @media (min-width: 769px) {
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -814,41 +830,32 @@
         </div>
     </section>
 
-    <!-- Certificates Section -->
+    <!-- Certificates Section (Only 2 certificates) -->
     <section id="certificates" class="certificates">
         <div class="container">
             <h2>My Certificates</h2>
             <div class="certificates-grid">
-                <div class="certificate-card">
-                    <div class="certificate-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white;">
-                        <i class="fas fa-certificate" style="font-size: 3.5rem;"></i>
-                    </div>
-                    <div class="certificate-content">
-                        <h3>Web Development Bootcamp</h3>
-                        <p>Completed an intensive web development program covering HTML, CSS, JavaScript, and React.</p>
-                        <a href="#" class="btn">View Certificate</a>
-                    </div>
-                </div>
-                
-                <div class="certificate-card">
-                    <div class="certificate-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white;">
-                        <i class="fas fa-certificate" style="font-size: 3.5rem;"></i>
-                    </div>
-                    <div class="certificate-content">
-                        <h3>Python Programming</h3>
-                        <p>Mastered Python programming concepts including data structures, algorithms, and OOP principles.</p>
-                        <a href="#" class="btn">View Certificate</a>
-                    </div>
-                </div>
-                
+                <!-- JavaScript Certificate -->
                 <div class="certificate-card">
                     <div class="certificate-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; color: white;">
                         <i class="fas fa-certificate" style="font-size: 3.5rem;"></i>
                     </div>
                     <div class="certificate-content">
                         <h3>JavaScript</h3>
-                        <p>Learned JavaScript programming including DOM manipulation, events, and modern ES6 features.</p>
+                        <p>Completed JavaScript programming course covering DOM manipulation, events, modern ES6 features, and JavaScript fundamentals.</p>
                         <a href="https://www.udemy.com/certificate/UC-9416378a-53b5-4140-99b4-0235394aade5/" class="btn" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Python Certificate -->
+                <div class="certificate-card">
+                    <div class="certificate-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                        <i class="fas fa-certificate" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Python Programming</h3>
+                        <p>Mastered Python programming concepts including data structures, algorithms, OOP principles, and Python fundamentals.</p>
+                        <a href="#" class="btn">View Certificate</a>
                     </div>
                 </div>
             </div>
