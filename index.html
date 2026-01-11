@@ -216,7 +216,7 @@
             font-size: 1.4rem;
         }
         
-        /* Hero Section */
+        /* Hero Section with Profile Picture */
         .hero {
             height: 100vh;
             display: flex;
@@ -245,8 +245,23 @@
         }
         
         .hero-content {
-            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
             z-index: 1;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
         }
         
         .hero h1 {
@@ -265,32 +280,10 @@
             gap: 15px;
         }
         
-        /* About Section */
-        .about {
-            background-color: var(--secondary-bg);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-            text-align: center;
-            position: relative;
-        }
-        
         .profile-img-container {
-            width: 280px;
-            height: 280px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            margin: 0 auto;
             position: relative;
             background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
             padding: 8px;
@@ -314,30 +307,220 @@
             justify-content: center;
             color: white;
             font-size: 5rem;
+            overflow: hidden;
+            position: relative;
         }
         
-        .skills {
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Fallback icon styling */
+        .profile-fallback {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: var(--accent-light);
         }
         
-        .skill {
-            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
-            padding: 8px 16px;
-            border-radius: 20px;
+        .profile-fallback i {
+            font-size: 5rem;
+            margin-bottom: 10px;
+        }
+        
+        .profile-fallback span {
             font-size: 0.9rem;
-            color: white;
-            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
-            transition: transform 0.3s ease;
+            color: var(--text-muted);
         }
         
-        .skill:hover {
-            transform: translateY(-3px);
+        /* About Section - Enhanced Styles */
+        .about-intro {
+            margin-bottom: 40px;
         }
         
-        /* Projects Section */
+        .highlight {
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+        
+        /* Technologies Grid */
+        .technologies-section {
+            margin: 50px 0;
+        }
+        
+        .technologies-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        
+        .technologies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+        
+        .tech-icon.html {
+            background: rgba(228, 77, 38, 0.15);
+            color: #E44D26;
+        }
+        
+        .tech-icon.css {
+            background: rgba(38, 77, 228, 0.15);
+            color: #264DE4;
+        }
+        
+        .tech-icon.bootstrap {
+            background: rgba(86, 61, 124, 0.15);
+            color: #7952B3;
+        }
+        
+        .tech-icon.js {
+            background: rgba(247, 223, 30, 0.15);
+            color: #F7DF1E;
+        }
+        
+        .tech-icon.php {
+            background: rgba(119, 123, 179, 0.15);
+            color: #777BB3;
+        }
+        
+        .tech-icon.poo {
+            background: rgba(41, 128, 185, 0.15);
+            color: #2980B9;
+        }
+        
+        .tech-icon.mysql {
+            background: rgba(0, 117, 143, 0.15);
+            color: #00758F;
+        }
+        
+        .tech-icon.react {
+            background: rgba(97, 219, 251, 0.15);
+            color: #61DAFB;
+        }
+        
+        .tech-info {
+            flex-grow: 1;
+        }
+        
+        .tech-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+        
+        .tech-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .tech-progress {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .progress-bar {
+            width: 80px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+            border-radius: 3px;
+        }
+        
+        .tech-progress span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            min-width: 35px;
+        }
+        
+        /* Future Goals */
+        .future-goals {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(233, 30, 99, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .future-goals h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .goals-content p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .goals-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .goals-list {
+            margin: 20px 0 20px 20px;
+        }
+        
+        .goals-list li {
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .goals-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Projects Section (now includes Python Games) */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -419,17 +602,7 @@
             flex-wrap: wrap;
         }
         
-        /* Python Games Section */
-        .games {
-            background-color: var(--secondary-bg);
-        }
-        
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        
+        /* Game Cards */
         .game-card {
             background-color: var(--card-bg);
             border-radius: 12px;
@@ -545,24 +718,185 @@
             flex-grow: 1;
         }
         
-        /* Footer */
-        footer {
+        /* Contact Section - Styled Icons */
+        .contact-section {
             background-color: var(--secondary-bg);
-            padding: 50px 0 25px;
             text-align: center;
+            padding: 100px 0;
         }
         
-        .social-links {
+        .contact-section h2 {
+            margin-bottom: 60px;
+        }
+        
+        .contact-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .contact-icon-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-icon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+        }
+        
+        .contact-icon-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
+            background: var(--card-hover);
+        }
+        
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .icon-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.8rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .contact-icon-card:hover .icon-container {
+            transform: rotateY(360deg) scale(1.1);
+        }
+        
+        .icon-container::after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+        
+        .icon-container.gmail {
+            background: linear-gradient(135deg, #EA4335, #F4B400);
+            color: white;
+            box-shadow: 0 10px 25px rgba(234, 67, 53, 0.3);
+        }
+        
+        .icon-container.gmail::after {
+            background: linear-gradient(135deg, #EA4335, #F4B400);
+        }
+        
+        .icon-container.github {
+            background: linear-gradient(135deg, #333, #6e5494);
+            color: white;
+            box-shadow: 0 10px 25px rgba(51, 51, 51, 0.3);
+        }
+        
+        .icon-container.github::after {
+            background: linear-gradient(135deg, #333, #6e5494);
+        }
+        
+        .icon-container.linkedin {
+            background: linear-gradient(135deg, #0077B5, #00A0DC);
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 119, 181, 0.3);
+        }
+        
+        .icon-container.linkedin::after {
+            background: linear-gradient(135deg, #0077B5, #00A0DC);
+        }
+        
+        .icon-container.instagram {
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4, #5851DB, #405DE6);
+            color: white;
+            box-shadow: 0 10px 25px rgba(225, 48, 108, 0.3);
+        }
+        
+        .icon-container.instagram::after {
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4, #5851DB, #405DE6);
+        }
+        
+        .contact-icon-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-icon-card:hover h3 {
+            color: var(--accent-light);
+        }
+        
+        .contact-icon-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-icon-card:hover p {
+            color: var(--text-color);
+        }
+        
+        .contact-cta {
+            margin-top: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(255, 96, 144, 0.1));
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-cta h3 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .contact-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Minimal Footer */
+        .minimal-footer {
+            background-color: var(--primary-bg);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-social {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        .footer-social-link {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -570,20 +904,54 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
         }
         
-        .social-link:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 16px rgba(233, 30, 99, 0.4);
+        .footer-social-link.github {
+            background: #333;
         }
         
-        .copyright {
+        .footer-social-link.github:hover {
+            background: #444;
+            transform: translateY(-3px);
+        }
+        
+        .footer-social-link.linkedin {
+            background: #0077B5;
+        }
+        
+        .footer-social-link.linkedin:hover {
+            background: #00A0DC;
+            transform: translateY(-3px);
+        }
+        
+        .footer-copyright {
             color: var(--text-muted);
             font-size: 0.9rem;
         }
         
+        .footer-copyright i {
+            color: var(--accent-light);
+            margin: 0 5px;
+        }
+        
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .profile-img-container {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -616,35 +984,84 @@
                 font-size: 2.8rem;
             }
             
-            .about-content {
-                flex-direction: column;
-            }
-            
             .profile-img-container {
                 width: 240px;
                 height: 240px;
             }
             
             .projects-grid,
-            .games-grid,
             .certificates-grid {
                 grid-template-columns: 1fr;
             }
             
             .hero-btns {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
             
             .project-links {
                 flex-direction: column;
             }
             
-            /* For 2 certificates on mobile */
-            .certificates-grid {
+            .technologies-grid {
                 grid-template-columns: 1fr;
-                max-width: 600px;
-                margin: 0 auto;
+            }
+            
+            .tech-progress {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .progress-bar {
+                width: 100%;
+            }
+            
+            .future-goals {
+                padding: 20px;
+            }
+            
+            .goals-list {
+                margin-left: 15px;
+            }
+            
+            .contact-icons-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .contact-icon-card {
+                padding: 30px 20px;
+            }
+            
+            .icon-container {
+                width: 80px;
+                height: 80px;
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .profile-img-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .contact-icons-grid {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+            
+            .contact-icon-card {
+                padding: 25px 20px;
             }
         }
         
@@ -668,8 +1085,8 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#games">Python Games</a></li>
                     <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -678,43 +1095,29 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Profile Picture -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm Kaoutar</h1>
-                <p>An aspiring web developer currently learning modern web technologies to build functional and responsive websites.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn">Explore My Work</a>
-                    <a href="#games" class="btn btn-outline">Play Python Games</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I'm Kaoutar, a beginner web developer currently learning the fundamentals of web development. I'm passionate about coding and excited to build my skills in creating websites and applications.</p>
-                    <p>I'm currently learning HTML, CSS, JavaScript, PHP, MySQL, and React. Each day, I'm working on understanding how these technologies work together to create functional and visually appealing websites.</p>
-                    <p>My learning journey focuses on hands-on projects that help me apply what I'm learning. I believe the best way to learn programming is by building real projects and solving problems along the way.</p>
-                    <p>I'm eager to continue growing my skills and eventually become a proficient full-stack developer. Every line of code I write brings me closer to achieving this goal!</p>
-                    <div class="skills">
-                        <div class="skill">HTML</div>
-                        <div class="skill">CSS</div>
-                        <div class="skill">JavaScript</div>
-                        <div class="skill">PHP</div>
-                        <div class="skill">MySQL</div>
-                        <div class="skill">React</div>
+                <div class="hero-text">
+                    <h1>Hi, I'm Kaoutar</h1>
+                    <p>An aspiring web developer currently learning modern web technologies to build functional and responsive websites.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn">Explore My Work</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="hero-image">
                     <div class="profile-img-container">
                         <div class="profile-img">
-                            <i class="fas fa-user" style="color: var(--accent-light);"></i>
+                            <!-- OPTION 1: Use a placeholder image that will definitely load -->
+                            <img id="profile-picture" src="images/mee.jpeg" alt="Kaoutar's Profile Picture">
+                            
+                            <!-- Fallback will only show if both images fail to load -->
+                            <div id="profile-fallback" class="profile-fallback" style="display: none;">
+                                <i class="fas fa-user"></i>
+                                <span>Profile Image</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -722,11 +1125,176 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- About Section (without profile picture) -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <p><span class="highlight">Hello! I'm Kaoutar Saydi</span>, a passionate and dedicated web developer with expertise in both front-end and back-end technologies. I specialize in creating responsive, efficient, and user-friendly web applications.</p>
+                        
+                        <p>With a strong foundation in object-oriented programming principles, I approach every project with a focus on clean code, scalability, and maintainability. I enjoy solving complex problems and implementing creative solutions.</p>
+                    </div>
+                    
+                    <div class="technologies-section">
+                        <h3><i class="fas fa-cogs"></i> My Tech Stack</h3>
+                        <p class="section-subtitle">Technologies I work with and my current proficiency level:</p>
+                        <div class="technologies-grid">
+                            <div class="tech-card">
+                                <div class="tech-icon html">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>HTML5</h4>
+                                    <p>Semantic markup & web structure</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 95%"></div>
+                                    </div>
+                                    <span>95%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon css">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>CSS3</h4>
+                                    <p>Styling, animations & responsive design</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span>90%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon bootstrap">
+                                    <i class="fab fa-bootstrap"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>Bootstrap 5</h4>
+                                    <p>Responsive framework & UI components</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span>85%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon js">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>JavaScript</h4>
+                                    <p>Dynamic functionality & interactivity</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span>80%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon php">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>PHP</h4>
+                                    <p>Server-side development</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span>75%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon poo">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>OOP Principles</h4>
+                                    <p>Object-Oriented Programming</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span>80%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon mysql">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>MySQL</h4>
+                                    <p>Database design & management</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 70%"></div>
+                                    </div>
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-card">
+                                <div class="tech-icon react">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="tech-info">
+                                    <h4>React</h4>
+                                    <p>Modern UI development</p>
+                                </div>
+                                <div class="tech-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 50%"></div>
+                                    </div>
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="future-goals">
+                        <h3><i class="fas fa-bullseye"></i> What's Next?</h3>
+                        <div class="goals-content">
+                            <p>I'm currently expanding my skills in several exciting areas:</p>
+                            <ul class="goals-list">
+                                <li><span class="highlight">n8n Automation</span> - Learning workflow automation to streamline processes and integrate different services</li>
+                                <li><span class="highlight">Cloud Platforms</span> - Exploring AWS and Azure for deployment, scaling, and cloud services</li>
+                                <li><span class="highlight">Laravel Framework</span> - Diving deeper into this powerful PHP framework for robust web applications</li>
+                                <li><span class="highlight">DevOps Practices</span> - Implementing CI/CD pipelines and containerization with Docker</li>
+                            </ul>
+                            <p>My goal is to become a versatile full-stack developer with expertise in both development and deployment automation, capable of building complete solutions from backend to frontend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (now includes Python Games) -->
     <section id="projects" class="projects">
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-grid">
+                <!-- Web Projects -->
                 <div class="project-card">
                     <div class="project-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white;">
                         <i class="fas fa-utensils" style="font-size: 3.5rem;"></i>
@@ -785,44 +1353,52 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Python Games Section -->
-    <section id="games" class="games">
-        <div class="container">
-            <h2>Python Games</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-img" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                
+                <!-- Python Games -->
+                <div class="project-card game-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); display: flex; align-items: center; justify-content: center; color: white;">
                         <i class="fas fa-gamepad" style="font-size: 3.5rem;"></i>
                     </div>
-                    <div class="game-content">
-                        <h3>Snake Game</h3>
+                    <div class="project-content">
+                        <h3>Snake Game (Python)</h3>
                         <p>A classic snake game built with Python and Pygame. Control the snake to eat food and grow longer without hitting the walls or yourself.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">Python</div>
+                            <div class="project-tag">Pygame</div>
+                            <div class="project-tag">Game Development</div>
+                        </div>
                         <a href="snake-game.html" class="btn">Play Now</a>
                     </div>
                 </div>
                 
-                <div class="game-card">
-                    <div class="game-img" style="background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                <div class="project-card game-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%); display: flex; align-items: center; justify-content: center; color: white;">
                         <i class="fas fa-cubes" style="font-size: 3.5rem;"></i>
                     </div>
-                    <div class="game-content">
-                        <h3>Tetris</h3>
+                    <div class="project-content">
+                        <h3>Tetris (Python)</h3>
                         <p>The classic block-stacking puzzle game. Arrange falling tetrominoes to complete lines and earn points!</p>
+                        <div class="project-tags">
+                            <div class="project-tag">Python</div>
+                            <div class="project-tag">Pygame</div>
+                            <div class="project-tag">Game Development</div>
+                        </div>
                         <a href="tetris.html" class="btn">Play Now</a>
                     </div>
                 </div>
                 
-                <div class="game-card">
-                    <div class="game-img" style="background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%); display: flex; align-items: center; justify-content: center; color: white;">
+                <div class="project-card game-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%); display: flex; align-items: center; justify-content: center; color: white;">
                         <i class="fas fa-crosshairs" style="font-size: 3.5rem;"></i>
                     </div>
-                    <div class="game-content">
-                        <h3>Space Invaders</h3>
+                    <div class="project-content">
+                        <h3>Space Invaders (Python)</h3>
                         <p>A retro-style space shooter game where you defend Earth from alien invaders. Features multiple levels and power-ups.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">Python</div>
+                            <div class="project-tag">Pygame</div>
+                            <div class="project-tag">Game Development</div>
+                        </div>
                         <a href="space-invaders.html" class="btn">Play Now</a>
                     </div>
                 </div>
@@ -862,15 +1438,66 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/kaoutars2" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/kaoutar-saydi-5aa6a8382?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/kaoutar_pokito" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <h2>Contact Me</h2>
+            <div class="contact-icons-grid">
+                <div class="contact-icon-card">
+                    <a href="mailto:kaoutarsaydi9@gmail.com" class="contact-link">
+                        <div class="icon-container gmail">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Gmail</h3>
+                        <p>kaoutarsaydi0@gmail.com</p>
+                    </a>
+                </div>
+                
+                <div class="contact-icon-card">
+                    <a href="https://github.com/kaoutars2" class="contact-link" target="_blank">
+                        <div class="icon-container github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>@kaoutars2</p>
+                    </a>
+                </div>
+                
+                <div class="contact-icon-card">
+                    <a href="https://www.linkedin.com/in/kaoutar-saydi-5aa6a8382?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="contact-link" target="_blank">
+                        <div class="icon-container linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Kaoutar Saydi</p>
+                    </a>
+                </div>
+                
+                <div class="contact-icon-card">
+                    <a href="https://www.instagram.com/kaoutar_pokito" class="contact-link" target="_blank">
+                        <div class="icon-container instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>@kaoutar_pokito</p>
+                    </a>
+                </div>
             </div>
-            <p class="copyright">© 2023 Kaoutar's Portfolio. Crafted with <i class="fas fa-heart" style="color: var(--accent-light);"></i> and code.</p>
+            
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <div class="footer-social">
+                <a href="https://github.com/kaoutars2" class="footer-social-link github" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kaoutar-saydi-5aa6a8382?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="footer-social-link linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="footer-copyright">© 2025 Kaoutar's Portfolio. Crafted with <i class="fas fa-heart"></i> and code.</p>
         </div>
     </footer>
 
@@ -908,6 +1535,12 @@
                 }
             });
         });
+        
+        // Image loading
+        window.addEventListener('load', function() {
+            console.log("Page loaded successfully!");
+            console.log("Profile image should be visible now.");
+        });
     </script>
-</body>
+</body> 
 </html>
